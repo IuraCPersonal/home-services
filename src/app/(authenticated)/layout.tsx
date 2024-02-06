@@ -1,6 +1,6 @@
-import { Particles } from "@/components/landing/ui/particles";
-import { ClerkProvider, SignIn, SignedIn, SignedOut } from "@clerk/nextjs";
 import * as React from "react";
+
+import { ClerkProvider, SignIn, SignedIn, SignedOut } from "@clerk/nextjs";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,9 +11,7 @@ const RootLayout: React.FC<LayoutProps> = ({ children }) => {
     <ClerkProvider>
       <SignedIn>{children}</SignedIn>
       <SignedOut>
-        <Particles />
-
-        <SignIn afterSignInUrl={"/dashboard"} />
+        <SignIn afterSignInUrl={"/dashboard"} afterSignUpUrl={"/onboarding"} />
       </SignedOut>
     </ClerkProvider>
   );
