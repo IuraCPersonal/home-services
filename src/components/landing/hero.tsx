@@ -1,6 +1,10 @@
+"use client";
+
 import * as React from "react";
 import { Particles } from "./ui/particles";
-import { Box, Button, Container, Stack, Typography } from "@mui/material";
+import { Box, Button, Grid, Stack, Typography } from "@mui/material";
+import Link from "next/link";
+import { GitHub } from "@mui/icons-material";
 
 const Hero: React.FC = () => {
   return (
@@ -34,9 +38,33 @@ const Hero: React.FC = () => {
           </Typography>
         </Box>
 
-        <Button variant="contained" color="primary" size="large">
-          Get Started
-        </Button>
+        <Grid
+          container
+          spacing={2}
+          alignContent="center"
+          justifyContent="center"
+        >
+          <Grid item>
+            <Link href="/dashboard">
+              <Button variant="contained" color="primary" size="large">
+                Get Started
+              </Button>
+            </Link>
+          </Grid>
+
+          <Grid item>
+            <Link href="www.github.com/IuraCPersonal" target="_blank">
+              <Button
+                variant="outlined"
+                color="info"
+                size="large"
+                startIcon={<GitHub />}
+              >
+                View Github
+              </Button>
+            </Link>
+          </Grid>
+        </Grid>
       </Stack>
     </Box>
   );
