@@ -5,7 +5,7 @@ import * as React from "react";
 import { trpc } from "@/utils/trpc";
 
 const Dashboard: React.FC = () => {
-  const hello = trpc.hello.useQuery({ text: "client" });
+  const hello = trpc.service.list.useQuery();
 
   if (!hello.data) {
     return <div>Loading...</div>;
@@ -13,7 +13,7 @@ const Dashboard: React.FC = () => {
 
   return (
     <div>
-      <h1>{hello.data.greeting}</h1>
+      <h1>Helo</h1>
     </div>
   );
 };

@@ -13,7 +13,7 @@ import Typography from "@mui/material/Typography";
 import { UserButton, useUser } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
-import { Home, Person } from "@mui/icons-material";
+import { Home, Person, WorkSharp } from "@mui/icons-material";
 
 const drawerWidth = 240;
 
@@ -27,6 +27,11 @@ const pages = [
     title: "Profile",
     path: "/profile",
     icon: <Person />,
+  },
+  {
+    title: "Services",
+    path: "/services",
+    icon: <WorkSharp />,
   },
 ];
 

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import Sidebar from "@/components/Sidebar";
+import Sidebar from "@/components/ui/sidebar";
 import { Grid } from "@mui/material";
 
 import { ReactQueryProvider } from "./react-query-provider";
@@ -17,7 +17,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <Sidebar />
         </Grid>
 
-        <Grid item>{children}</Grid>
+        <Grid item flex={1} sx={{ mr: 4, mt: 4 }}>
+          {children}
+        </Grid>
       </Grid>
     </ReactQueryProvider>
   );
