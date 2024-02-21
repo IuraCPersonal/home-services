@@ -1,8 +1,8 @@
 import { db } from "@/prisma/db";
-import { z } from "zod";
 
 import { procedure, auth, router } from "../trpc";
 import { newId } from "@/lib/id-edge";
+import { createServiceDto } from "@/dto/service/createService.dto";
 
 export const serviceRouter = router({
   list: procedure.use(auth).query(async ({ ctx }) => {
@@ -10,21 +10,21 @@ export const serviceRouter = router({
   }),
   create: procedure
     .use(auth)
-    .input(
-      z.object({
-        title: z
-          .string()
-          .min(1)
-          .regex(/^[a-zA-Z0-9-_\.]+$/),
-      })
-    )
+    .input(createServiceDto)
     .mutation(async ({ input, ctx }) => {
-      return await db.service.create({
+      const service = await db.service.create({
         data: {
           id: newId("service"),
           title: input.title,
+          description: input.description,
+          location: input.location,
+          category: input.category,
+          price: input.price,
+          unit: input.unit,
           userId: ctx.user?.id,
         },
       });
+
+      return service;
     }),
 });

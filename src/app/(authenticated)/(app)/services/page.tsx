@@ -1,12 +1,14 @@
+import { Stack } from "@mui/material";
+
 import { PageHeader } from "@/components/ui/page-header";
-import { Button, Stack } from "@mui/material";
+import CreateServiceButton from "./CreateServiceButton";
 
 export default async function Page() {
   return (
     <Stack>
       <PageHeader
         title="Services"
-        actions={[<Button variant="contained">Create</Button>]}
+        actions={[<CreateServiceButton key="create" />]}
       />
     </Stack>
   );

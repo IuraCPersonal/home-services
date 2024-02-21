@@ -3,6 +3,8 @@
 import * as React from "react";
 
 import { trpc } from "@/utils/trpc";
+import { Stack } from "@mui/material";
+import { PageHeader } from "@/components/ui/page-header";
 
 const Dashboard: React.FC = () => {
   const hello = trpc.service.list.useQuery();
@@ -12,9 +14,9 @@ const Dashboard: React.FC = () => {
   }
 
   return (
-    <div>
-      <h1>Helo</h1>
-    </div>
+    <Stack>
+      <PageHeader title="Dashboard" />
+    </Stack>
   );
 };
 
