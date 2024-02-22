@@ -7,11 +7,11 @@ export type Timestamp = ColumnType<Date, Date | string, Date | string>;
 export type Service = {
     id: string;
     title: string;
-    description: string | null;
-    price: number | null;
-    unit: string | null;
-    location: string | null;
-    category: string | null;
+    description: string;
+    price: number;
+    unit: string;
+    location: string;
+    category: string;
     createdAt: Generated<Timestamp | null>;
     updatedAt: Timestamp | null;
     userId: string | null;

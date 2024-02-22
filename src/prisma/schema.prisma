@@ -24,11 +24,11 @@ model Service {
   id String @id
 
   title       String
-  description String?
-  price       Float?
-  unit        String?
-  location    String?
-  category    String?
+  description String
+  price       Float
+  unit        String
+  location    String
+  category    String
 
   createdAt DateTime? @default(now())
   updatedAt DateTime? @updatedAt

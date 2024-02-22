@@ -37,6 +37,18 @@ const categories = [
   },
 ];
 
+export const CategoriesEnum = {
+  "home-cleaning": "Home Cleaning",
+  plumbing: "Plumbing",
+  electrical: "Electrical",
+  carpentry: "Carpentry",
+  painting: "Painting",
+  gardening: "Gardening",
+  "pest-control": "Pest Control",
+  "appliance-repair": "Appliance Repair",
+  handyman: "Handyman",
+};
+
 const units = [
   {
     label: "Negotiable",
@@ -63,6 +75,15 @@ const units = [
     value: "mcubed",
   },
 ];
+
+export const UnitsEnum = {
+  negotiable: "Negotiable",
+  hour: "Hour",
+  day: "Day",
+  job: "Job",
+  msquared: "m²",
+  mcubed: "m³",
+};
 
 const locations = [
   {
@@ -166,5 +187,33 @@ const locations = [
     value: "rezina",
   },
 ];
+
+export const LocationsEnum = {
+  chisinau: "Chisinau",
+  balti: "Balti",
+  tiraspol: "Tiraspol",
+  bender: "Bender",
+  ribnita: "Ribnita",
+  cahul: "Cahul",
+  ungheni: "Ungheni",
+  soroca: "Soroca",
+  orhei: "Orhei",
+  dubasari: "Dubasari",
+  comrat: "Comrat",
+  "ceadir-lunga": "Ceadir-Lunga",
+  causeni: "Causeni",
+  straseni: "Straseni",
+  floresti: "Floresti",
+  drochia: "Drochia",
+  edinet: "Edinet",
+  falesti: "Falesti",
+  cantemir: "Cantemir",
+  vulcanesti: "Vulcanesti",
+  ialoveni: "Ialoveni",
+  leova: "Leova",
+  nisporeni: "Nisporeni",
+  ocnita: "Ocnita",
+  rezina: "Rezina",
+};
 
 export { categories, units, locations };

@@ -12,6 +12,11 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import {
+  CategoriesEnum,
+  LocationsEnum,
+  UnitsEnum,
+} from "@/app/(authenticated)/(app)/services/utils/constants";
 
 const ServiceCard: React.FC<Service> = ({
   title,
@@ -33,7 +38,7 @@ const ServiceCard: React.FC<Service> = ({
     <Card sx={{ display: "flex" }}>
       <CardMedia
         component="img"
-        sx={{ width: "151px", minWidth: "151px", height: "151px" }}
+        sx={{ width: "200px", minWidth: "200px", height: "200px" }}
         image="https://source.unsplash.com/random"
         alt="Random image"
       />
@@ -49,7 +54,7 @@ const ServiceCard: React.FC<Service> = ({
             justifyContent="space-between"
           >
             <Box>
-              <Typography component="h2" variant="h5">
+              <Typography component="h2" variant="h5" fontWeight={700}>
                 {title}
               </Typography>
               <Stack
@@ -60,16 +65,20 @@ const ServiceCard: React.FC<Service> = ({
                 }
               >
                 <Typography variant="body2" color="text.secondary">
-                  {category}
+                  {CategoriesEnum[category as keyof typeof CategoriesEnum] ||
+                    category}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  Moldova, {location}
+                  Moldova,{" "}
+                  {LocationsEnum[location as keyof typeof LocationsEnum] ||
+                    location}
                 </Typography>
               </Stack>
             </Box>
             <Box sx={{ display: "flex", justifyContent: "space-between" }}>
               <Typography variant="body2" fontWeight={700} color="green">
-                {price} MDL / {unit}
+                {price} MDL /{" "}
+                {UnitsEnum[unit as keyof typeof UnitsEnum] || unit}
               </Typography>
 
               <Typography variant="body2" color="text.secondary">
