@@ -17,8 +17,11 @@ import {
 import { AddCircleOutline } from "@mui/icons-material";
 
 import { categories, locations, units } from "./utils/constants";
+import { useRouter } from "next/navigation";
 
 const CreateServiceButton = () => {
+  const router = useRouter();
+
   const [open, setOpen] = React.useState<boolean>(false);
 
   const [title, setTitle] = React.useState<string>("");
@@ -30,7 +33,7 @@ const CreateServiceButton = () => {
 
   const create = trpc.service.create.useMutation({
     onSuccess: () => {
-      console.log("Service created");
+      router.refresh();
     },
     onError: (error) => {
       console.error("Failed to create service", error);
@@ -55,7 +58,7 @@ const CreateServiceButton = () => {
       location: location,
     };
 
-    const createdService = await create.mutate({ ...payload });
+    await create.mutate({ ...payload });
   }, [title, description, category, price, unit, location, create]);
 
   return (
@@ -127,6 +130,7 @@ const CreateServiceButton = () => {
             SelectProps={{
               native: true,
             }}
+            onChange={(event) => setCategory(event.target.value)}
           >
             {categories.map((category) => (
               <option key={category.value} value={category.value}>
@@ -151,6 +155,7 @@ const CreateServiceButton = () => {
                   <InputAdornment position="start">MDL</InputAdornment>
                 ),
               }}
+              onChange={(event) => setPrice(Number(event.target.value))}
             />
 
             <TextField
@@ -165,6 +170,7 @@ const CreateServiceButton = () => {
               SelectProps={{
                 native: true,
               }}
+              onChange={(event) => setUnit(event.target.value)}
             >
               {units.map((unit) => (
                 <option key={unit.value} value={unit.value}>
@@ -187,6 +193,7 @@ const CreateServiceButton = () => {
             SelectProps={{
               native: true,
             }}
+            onChange={(event) => setLocation(event.target.value)}
           >
             {locations.map((category) => (
               <option key={category.value} value={category.value}>
