@@ -25,6 +25,7 @@ const ServiceCard: React.FC<Service> = ({
   category,
   price,
   unit,
+  image,
 }) => {
   const today = new Date();
   const diffDays = Math.floor(
@@ -39,7 +40,7 @@ const ServiceCard: React.FC<Service> = ({
       <CardMedia
         component="img"
         sx={{ width: "200px", minWidth: "200px", height: "200px" }}
-        image="https://source.unsplash.com/random"
+        image={image || "https://source.unsplash.com/random"}
         alt="Random image"
       />
       <Box sx={{ display: "flex", flexDirection: "column", flex: "1 1 auto" }}>

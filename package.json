@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.515.0",
+    "@aws-sdk/s3-presigned-post": "^3.515.0",
     "@clerk/nextjs": "^4.29.6",
     "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.3",
@@ -31,12 +33,14 @@
     "react-dom": "^18",
     "sass": "^1.70.0",
     "superjson": "^2.2.1",
+    "uuid": "^9.0.1",
     "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/uuid": "^9.0.8",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "typescript": "^5"

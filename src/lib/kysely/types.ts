@@ -12,6 +12,7 @@ export type Service = {
     unit: string;
     location: string;
     category: string;
+    image: string | null;
     createdAt: Generated<Timestamp | null>;
     updatedAt: Timestamp | null;
     userId: string | null;

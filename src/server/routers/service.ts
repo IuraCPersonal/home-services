@@ -21,6 +21,7 @@ export const serviceRouter = router({
           category: input.category,
           price: input.price,
           unit: input.unit,
+          image: input.image,
           userId: ctx.user?.id,
         },
       });
