@@ -17,6 +17,7 @@ import {
   LocationsEnum,
   UnitsEnum,
 } from "@/app/(authenticated)/(app)/services/utils/constants";
+import Image from "next/image";
 
 const ServiceCard: React.FC<Service> = ({
   title,
@@ -37,12 +38,16 @@ const ServiceCard: React.FC<Service> = ({
 
   return (
     <Card sx={{ display: "flex" }}>
-      <CardMedia
-        component="img"
-        sx={{ width: "200px", minWidth: "200px", height: "200px" }}
-        image={image || "https://source.unsplash.com/random"}
-        alt="Random image"
-      />
+      <CardMedia sx={{ width: "200px", minWidth: "200px", height: "200px" }}>
+        <div style={{ position: "relative", width: "100%", height: "100%" }}>
+          <Image
+            layout="fill"
+            objectFit="cover  "
+            src={image || "https://source.unsplash.com/random"}
+            alt="Service Image"
+          />
+        </div>
+      </CardMedia>
       <Box sx={{ display: "flex", flexDirection: "column", flex: "1 1 auto" }}>
         <CardContent
           sx={{
